@@ -1,0 +1,2 @@
+rabbitmq:
+    URI: amqp://bigpolis:bigpolis@127.0.0.1:5672/tserd14

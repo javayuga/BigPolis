@@ -1,0 +1,2 @@
+rabbitmq:
+    URI: amqp://bigpolis:bigpolis@neurosis.etc.br:5672/tserd14

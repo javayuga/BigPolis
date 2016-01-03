@@ -1,0 +1,8 @@
+rabbitmq:
+    commandQueue: BP_Command
+    commandExchange: BP_CommandExchange
+    crawlQueue: BP_Crawl
+    crawlExchange: BP_CrawlExchange
+
+candidatesByRegionByOfficeCrawlers: 6
+    
