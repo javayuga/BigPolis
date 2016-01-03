@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>br.net.neuromancer.bigpolis</groupId>
-		<artifactId>bipolis-parent</artifactId>
+		<artifactId>bigpolis-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>tserd14</artifactId>
