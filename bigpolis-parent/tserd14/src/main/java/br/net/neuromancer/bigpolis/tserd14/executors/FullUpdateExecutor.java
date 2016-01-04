@@ -5,9 +5,10 @@ import javax.annotation.PreDestroy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.core.AcknowledgeMode;
 import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -56,15 +57,17 @@ public class FullUpdateExecutor {
 		// set up the queue, exchange, binding on the broker
 		Queue queue = new Queue(commandQueue);
 		rabbitAdmin.declareQueue(queue);
-		TopicExchange exchange = new TopicExchange(commandExchange);
+		
+		DirectExchange exchange = new DirectExchange(commandExchange);
 		rabbitAdmin.declareExchange(exchange);
 		rabbitAdmin.declareBinding(BindingBuilder.bind(queue).to(exchange).with("tserd14.fullUpdate"));
 
 		container = new SimpleMessageListenerContainer(connectionFactory);
+		container.setQueueNames(commandQueue);
+		container.setAcknowledgeMode(AcknowledgeMode.AUTO);
 
 		MessageListenerAdapter adapter = new MessageListenerAdapter(new Listener());
 		container.setMessageListener(adapter);
-		container.setQueueNames(commandQueue);
 		container.start();
 
 	}
