@@ -6,8 +6,8 @@ import javax.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.BindingBuilder;
+import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitAdmin;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -54,7 +54,8 @@ public class CandidatesByRegionByOfficeCrawler {
 		// set up the queue, exchange, binding on the broker
 		Queue queue = new Queue(crawlQueue);
 		rabbitAdmin.declareQueue(queue);
-		TopicExchange exchange = new TopicExchange(crawlExchange);
+		
+		DirectExchange exchange = new DirectExchange(crawlExchange);
 		rabbitAdmin.declareExchange(exchange);
 		rabbitAdmin.declareBinding(BindingBuilder.bind(queue).to(exchange).with("tserd14.candidatesByRegionByOffice"));
 		
@@ -64,6 +65,8 @@ public class CandidatesByRegionByOfficeCrawler {
 		container.setConcurrentConsumers(candidatesByRegionByOfficeCrawlers);
 		container.setMessageListener(adapter);
 		container.setQueueNames(crawlQueue);
+		
+		start();
 	
 	}
 
