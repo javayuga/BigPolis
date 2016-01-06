@@ -1,0 +1,25 @@
+{
+  "generator-jhipster": {
+    "baseName": "tserd14Browser",
+    "packageName": "br.net.neuromancer.bigpolis.tserd14",
+    "packageFolder": "br/net/neuromancer/bigpolis/tserd14",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "19cd9af205477696b6fba91328866544401ee669",
+    "testFrameworks": [
+      "gatling",
+      "cucumber"
+    ]
+  }
+}
