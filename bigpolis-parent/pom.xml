@@ -16,5 +16,6 @@
 
   <modules>
   	<module>tserd14</module>
+  	<module>tserd14Browser</module>
   </modules>
 </project>
