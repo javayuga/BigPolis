@@ -16,18 +16,20 @@ import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import br.net.neuromancer.bigpolis.tserd14.models.GeoUF;
 import br.net.neuromancer.bigpolis.tserd14.models.PolCargo;
 import br.net.neuromancer.bigpolis.tserd14.requests.CandidatesByRegionByOfficeCrawlRequest;
 
 /**
- * FullUpdateOrchestrator
+ * FullUpdateExecutor
  * 
  * listens to BP_Commands queue issues requests for bulk updates of Candidate
  * basic info based on Region (geoUF) and Office (polCargo)
  *
  */
+@Component
 public class FullUpdateExecutor {
 
 	protected final Logger log = LoggerFactory.getLogger(getClass());
