@@ -6,11 +6,11 @@ public enum PolCargo {
 	GOVERNADOR("Governador"),
 	VICE_GOVERNADOR("Vice-Governador"),
 	SENADOR("Senador"),
-	PRIMEIRO_SUPLENTE_SENADOR("Primeiro Suplente Senador"),
-	SEGUNDO_SUPLENTE_SENADOR("Segundo Suplente Senador"),
 	DEPUTADO_FEDERAL("Deputado Federal"),
 	DEPUTADO_ESTADUAL("Deputado Estadual"),
-	DEPUTADO_DISTRITAL("Deputado Distrital");
+	DEPUTADO_DISTRITAL("Deputado Distrital"),
+	PRIMEIRO_SUPLENTE_SENADOR("Primeiro Suplente Senador"),
+	SEGUNDO_SUPLENTE_SENADOR("Segundo Suplente Senador");
 	
 	private final String cargo;
     

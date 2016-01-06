@@ -21,6 +21,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import br.net.neuromancer.bigpolis.tserd14.configurations.BasicConfiguration;
+import br.net.neuromancer.bigpolis.tserd14.configurations.HtmlUnitConfiguration;
 import br.net.neuromancer.bigpolis.tserd14.configurations.RabbitMqConfiguration;
 import br.net.neuromancer.bigpolis.tserd14.crawlers.CandidatesByRegionByOfficeCrawler;
 import br.net.neuromancer.bigpolis.tserd14.executors.FullUpdateExecutor;
@@ -28,7 +29,7 @@ import br.net.neuromancer.bigpolis.tserd14.models.GeoUF;
 import br.net.neuromancer.bigpolis.tserd14.models.PolCargo;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = { BasicConfiguration.class, RabbitMqConfiguration.class })
+@ContextConfiguration(classes = { BasicConfiguration.class, RabbitMqConfiguration.class, HtmlUnitConfiguration.class })
 @ActiveProfiles("prod")
 public class FullUpdateExecutorTests {
 	protected final Logger log = LoggerFactory.getLogger(getClass());
@@ -74,7 +75,7 @@ public class FullUpdateExecutorTests {
 		
 		Thread.sleep(2000);
 		
-		assertQueueSize(crawlQueue, GeoUF.values().length * PolCargo.values().length);
+		assertQueueSize(crawlQueue, (GeoUF.values().length - 1) * ( PolCargo.values().length - 2) + 2);
 	}
 
 	@Test
@@ -86,9 +87,9 @@ public class FullUpdateExecutorTests {
 		rabbitTemplate.convertAndSend(commandExchange, "tserd14.fullUpdate", "Do a full update, Scotty!");
 
 		// adjust to a reasonable delay
-		// the first trials indicate that 100000s should be enough
-		// if each crawl takes 1s, and if at least 3 consumers are active
-		Thread.sleep(100000);
+		// the first trials indicate that 180000s should be enough
+		// if each crawl takes definitely more than 1s, and if at least  consumers are active
+		Thread.sleep(180000);
 		
 		assertQueueSize(crawlQueue, 0);
 	}

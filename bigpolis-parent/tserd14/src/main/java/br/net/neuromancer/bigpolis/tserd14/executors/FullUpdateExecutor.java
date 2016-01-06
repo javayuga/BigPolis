@@ -59,7 +59,7 @@ public class FullUpdateExecutor {
 		// set up the queue, exchange, binding on the broker
 		Queue queue = new Queue(commandQueue);
 		rabbitAdmin.declareQueue(queue);
-		
+
 		DirectExchange exchange = new DirectExchange(commandExchange);
 		rabbitAdmin.declareExchange(exchange);
 		rabbitAdmin.declareBinding(BindingBuilder.bind(queue).to(exchange).with("tserd14.fullUpdate"));
@@ -82,9 +82,17 @@ public class FullUpdateExecutor {
 	public class Listener {
 		public void handleMessage(String foo) {
 			for (PolCargo cargo : PolCargo.values()) {
-				for (GeoUF uf : GeoUF.values()) {
+				if ((!cargo.equals(PolCargo.PRESIDENTE))&&(!cargo.equals(PolCargo.VICE_PRESIDENTE))) {
+					for (GeoUF uf : GeoUF.values()) {
+						if (!uf.equals(GeoUF.BR)){
+							rabbitTemplate.convertAndSend(crawlExchange, "tserd14.candidatesByRegionByOffice",
+									new CandidatesByRegionByOfficeCrawlRequest(uf, cargo));
+						}
+					}
+				}else{
 					rabbitTemplate.convertAndSend(crawlExchange, "tserd14.candidatesByRegionByOffice",
-							new CandidatesByRegionByOfficeCrawlRequest(uf, cargo));
+							new CandidatesByRegionByOfficeCrawlRequest(GeoUF.BR, cargo));
+					
 				}
 			}
 		}
