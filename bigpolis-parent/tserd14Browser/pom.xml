@@ -597,14 +597,14 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>${liquibase.version}</version>
                 <configuration>
-                    <changeLogFile>src/main/resources/config/liquibase/master.xml</changeLogFile>
+                    <changeLogFile>src/main/resources/config/liquibase/master-prod.xml</changeLogFile>
                     <diffChangeLogFile>src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
-                    <driver></driver>
-                    <url></url>
-                    <defaultSchemaName></defaultSchemaName>
-                    <username></username>
-                    <password></password>
-                    <referenceUrl>hibernate:spring:br.net.neuromancer.bigpolis.tserd14.domain?dialect=</referenceUrl>
+                    <driver>com.mysql.jdbc.Driver</driver>
+                    <url>jdbc:mysql://neurosis.etc.br:3308/tserd14Browser</url>
+                    <defaultSchemaName>tserd14Browser</defaultSchemaName>
+                    <username>bigpolis</username>
+                    <password>bigpolis</password>
+                    <referenceUrl>hibernate:spring:br.net.neuromancer.bigpolis.tserd14.domain?dialect=org.hibernate.dialect.MySQLDialect</referenceUrl>
                     <verbose>true</verbose>
                     <logging>debug</logging>
                 </configuration>

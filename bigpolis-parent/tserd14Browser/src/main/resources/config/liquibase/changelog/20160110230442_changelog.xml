@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+   <changeSet author="marco.silva (generated)" id="1452467088068-1">
+      <createTable tableName="jhi_authority">
+         <column name="name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-2">
+      <createTable tableName="jhi_persistent_audit_event">
+         <column autoIncrement="true" name="event_id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+         </column>
+         <column name="event_date" type="datetime"/>
+         <column name="event_type" type="VARCHAR(255)"/>
+         <column name="principal" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-3">
+      <createTable tableName="jhi_persistent_audit_evt_data">
+         <column name="event_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="value" type="VARCHAR(255)"/>
+         <column name="name" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-4">
+      <createTable tableName="jhi_persistent_token">
+         <column name="series" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="ip_address" type="VARCHAR(39)"/>
+         <column name="token_date" type="date"/>
+         <column name="token_value" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="user_agent" type="VARCHAR(255)"/>
+         <column name="user_id" type="BIGINT"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-5">
+      <createTable tableName="jhi_social_user_connection">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_social_user_connectionPK"/>
+         </column>
+         <column name="access_token" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="display_name" type="VARCHAR(255)"/>
+         <column name="expire_time" type="BIGINT"/>
+         <column name="image_url" type="VARCHAR(255)"/>
+         <column name="profile_url" type="VARCHAR(255)"/>
+         <column name="provider_id" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="provider_user_id" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="rank" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="refresh_token" type="VARCHAR(255)"/>
+         <column name="secret" type="VARCHAR(255)"/>
+         <column name="user_id" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-6">
+      <createTable tableName="jhi_user">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="jhi_userPK"/>
+         </column>
+         <column name="created_by" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="created_date" type="datetime">
+            <constraints nullable="false"/>
+         </column>
+         <column name="last_modified_by" type="VARCHAR(50)"/>
+         <column name="last_modified_date" type="datetime"/>
+         <column name="activated" type="BOOLEAN">
+            <constraints nullable="false"/>
+         </column>
+         <column name="activation_key" type="VARCHAR(20)"/>
+         <column name="email" type="VARCHAR(100)"/>
+         <column name="first_name" type="VARCHAR(50)"/>
+         <column name="lang_key" type="VARCHAR(5)"/>
+         <column name="last_name" type="VARCHAR(50)"/>
+         <column name="login" type="VARCHAR(100)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="password_hash" type="VARCHAR(60)"/>
+         <column name="reset_date" type="datetime"/>
+         <column name="reset_key" type="VARCHAR(20)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-7">
+      <createTable tableName="jhi_user_authority">
+         <column name="user_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="authority_name" type="VARCHAR(50)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-8">
+      <createTable tableName="pol_candidacy">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="pol_candidacyPK"/>
+         </column>
+         <column name="election_day" type="date">
+            <constraints nullable="false"/>
+         </column>
+         <column name="office" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+         <column name="region" type="VARCHAR(255)">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-9">
+      <createTable tableName="pol_candidate">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="pol_candidatePK"/>
+         </column>
+         <column name="alias" type="VARCHAR(140)"/>
+         <column name="full_name" type="VARCHAR(140)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-10">
+      <createTable tableName="pol_candidate_candidacies">
+         <column name="pol_candidates_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="candidaciess_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-11">
+      <createTable tableName="pol_party">
+         <column autoIncrement="true" name="id" type="BIGINT">
+            <constraints primaryKey="true" primaryKeyName="pol_partyPK"/>
+         </column>
+         <column name="acronym" type="VARCHAR(255)"/>
+         <column name="name" type="VARCHAR(140)"/>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-12">
+      <createTable tableName="pol_party_candidacies">
+         <column name="pol_partys_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+         <column name="candidaciess_id" type="BIGINT">
+            <constraints nullable="false"/>
+         </column>
+      </createTable>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-13">
+      <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-14">
+      <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-15">
+      <addPrimaryKey columnNames="pol_candidates_id, candidaciess_id"
+                     tableName="pol_candidate_candidacies"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-16">
+      <addPrimaryKey columnNames="pol_partys_id, candidaciess_id"
+                     tableName="pol_party_candidacies"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-17">
+      <addPrimaryKey columnNames="name"
+                     constraintName="jhi_authorityPK"
+                     tableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-18">
+      <addPrimaryKey columnNames="series"
+                     constraintName="jhi_persistent_tokenPK"
+                     tableName="jhi_persistent_token"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-19">
+      <addUniqueConstraint columnNames="email"
+                           constraintName="UC_JHI_USEREMAIL_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-20">
+      <addUniqueConstraint columnNames="login"
+                           constraintName="UC_JHI_USERLOGIN_COL"
+                           tableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-21">
+      <addForeignKeyConstraint baseColumnNames="pol_partys_id"
+                               baseTableName="pol_party_candidacies"
+                               constraintName="FK_6sswdav6iin189leb212af5lt"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="pol_party"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-22">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="jhi_persistent_token"
+                               constraintName="FK_c2yetr6vr7nrqhjvi1rl24b3l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-23">
+      <addForeignKeyConstraint baseColumnNames="event_id"
+                               baseTableName="jhi_persistent_audit_evt_data"
+                               constraintName="FK_evb970jo5bi8aon8s65c0lyyn"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="event_id"
+                               referencedTableName="jhi_persistent_audit_event"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-24">
+      <addForeignKeyConstraint baseColumnNames="pol_candidates_id"
+                               baseTableName="pol_candidate_candidacies"
+                               constraintName="FK_fvi55i9eowiprws4u8wgumj2r"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="pol_candidate"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-25">
+      <addForeignKeyConstraint baseColumnNames="candidaciess_id"
+                               baseTableName="pol_party_candidacies"
+                               constraintName="FK_i2mnspnqgiohtincq7uqbmt3t"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="pol_candidacy"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-26">
+      <addForeignKeyConstraint baseColumnNames="authority_name"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK_ik5r332jlvpolfr7e5n7oi42l"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="name"
+                               referencedTableName="jhi_authority"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-27">
+      <addForeignKeyConstraint baseColumnNames="user_id"
+                               baseTableName="jhi_user_authority"
+                               constraintName="FK_pg0oaw6mr9pt3ibeihdc1jwof"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="jhi_user"/>
+   </changeSet>
+   <changeSet author="marco.silva (generated)" id="1452467088068-28">
+      <addForeignKeyConstraint baseColumnNames="candidaciess_id"
+                               baseTableName="pol_candidate_candidacies"
+                               constraintName="FK_svxr2287lkvq5a4r4d07qfso3"
+                               deferrable="false"
+                               initiallyDeferred="false"
+                               referencedColumnNames="id"
+                               referencedTableName="pol_candidacy"/>
+   </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,20 @@
+{
+    "tserd14BrowserApp": {
+        "polParty" : {
+            "home": {
+                "title": "PolPartys",
+                "createLabel": "Criar um(a) novo(a) PolParty",
+                "createOrEditLabel": "Criar ou editar um(a) PolParty"
+            },
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) PolParty {{ id }}?"
+            },
+            "detail": {
+                "title": "PolParty"
+            },
+            "name": "Name",
+            "acronym": "Acronym",
+            "candidacies": "Candidacies"
+        }
+    }
+}

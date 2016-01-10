@@ -1,0 +1,23 @@
+{
+    "tserd14BrowserApp": {
+        "polCandidate" : {
+            "home": {
+                "title": "PolCandidates",
+                "createLabel": "Create a new PolCandidate",
+                "createOrEditLabel": "Create or edit a PolCandidate"
+            },
+            "created": "A new PolCandidate is created with identifier {{ param }}",
+            "updated": "A PolCandidate is updated with identifier {{ param }}",
+            "deleted": "A PolCandidate is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete PolCandidate {{ id }}?"
+            },
+            "detail": {
+                "title": "PolCandidate"
+            },
+            "fullName": "FullName",
+            "alias": "Alias",
+            "candidacies": "Candidacies"
+        }
+    }
+}

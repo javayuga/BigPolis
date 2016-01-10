@@ -7,6 +7,9 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "polParty": "PolParty",
+                "polCandidate": "PolCandidate",
+                "polCandidacy": "PolCandidacy",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -43,6 +46,7 @@
             "email.placeholder": "Your e-mail"
         },
         "messages": {
+            "search":"Search by name",
             "info": {
                 "authenticated": "If you want to <a class=\"alert-link\" href=\"#/login\">sign in</a>, you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\").",
                 "register": "You don't have an account yet? <a class=\"alert-link\" href=\"#/register\">Register a new account</a>"

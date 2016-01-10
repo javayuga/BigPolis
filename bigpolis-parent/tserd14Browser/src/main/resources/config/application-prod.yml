@@ -20,7 +20,7 @@ spring:
             enabled: false
     datasource:
         driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        url: jdbc:mysql://localhost:3306/tserd14Browser?useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://neurosis.etc.br:3308/tserd14Browser?useUnicode=true&characterEncoding=utf8
         name:
         username: root
         password:

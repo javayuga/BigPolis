@@ -1,0 +1,41 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "candidacies",
+            "otherEntityName": "polCandidacy",
+            "otherEntityField": "candidate",
+            "relationshipType": "many-to-many",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "candidate"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "fullName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "5",
+            "fieldValidateRulesMaxlength": "140"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "alias",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": "2",
+            "fieldValidateRulesMaxlength": "140"
+        }
+    ],
+    "changelogDate": "20160110142102",
+    "dto": "no",
+    "service": "no",
+    "pagination": "pagination"
+}

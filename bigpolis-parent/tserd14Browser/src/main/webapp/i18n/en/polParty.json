@@ -1,0 +1,23 @@
+{
+    "tserd14BrowserApp": {
+        "polParty" : {
+            "home": {
+                "title": "PolPartys",
+                "createLabel": "Create a new PolParty",
+                "createOrEditLabel": "Create or edit a PolParty"
+            },
+            "created": "A new PolParty is created with identifier {{ param }}",
+            "updated": "A PolParty is updated with identifier {{ param }}",
+            "deleted": "A PolParty is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete PolParty {{ id }}?"
+            },
+            "detail": {
+                "title": "PolParty"
+            },
+            "name": "Name",
+            "acronym": "Acronym",
+            "candidacies": "Candidacies"
+        }
+    }
+}

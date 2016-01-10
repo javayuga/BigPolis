@@ -1,0 +1,66 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myPolCandidacyLabel" translate="tserd14BrowserApp.polCandidacy.home.createOrEditLabel">Create or edit a PolCandidacy</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="polCandidacy.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tserd14BrowserApp.polCandidacy.office" for="field_office">Office</label>
+            <select class="form-control" name="office" ng-model="polCandidacy.office" id="field_office" required>
+                <option value="PRESIDENTE" translate="tserd14BrowserApp.PolOffice.PRESIDENTE">PRESIDENTE</option>
+                <option value="VICE_PRESIDENTE" translate="tserd14BrowserApp.PolOffice.VICE_PRESIDENTE">VICE_PRESIDENTE</option>
+            </select>
+            <div ng-show="editForm.office.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.office.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tserd14BrowserApp.polCandidacy.region" for="field_region">Region</label>
+            <select class="form-control" name="region" ng-model="polCandidacy.region" id="field_region" required>
+                <option value="RJ" translate="tserd14BrowserApp.GeoAdminRegion.RJ">RJ</option>
+                <option value="SP" translate="tserd14BrowserApp.GeoAdminRegion.SP">SP</option>
+            </select>
+            <div ng-show="editForm.region.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.region.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="tserd14BrowserApp.polCandidacy.electionDay" for="field_electionDay">ElectionDay</label>
+            <input id="field_electionDay" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="polCandidacy.electionDay" is-open="datePickerForElectionDay.status.opened"
+            required/>
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForElectionDayOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+            <div ng-show="editForm.electionDay.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.electionDay.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

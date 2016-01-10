@@ -1,0 +1,25 @@
+{
+    "tserd14BrowserApp": {
+        "polCandidacy" : {
+            "home": {
+                "title": "PolCandidacys",
+                "createLabel": "Create a new PolCandidacy",
+                "createOrEditLabel": "Create or edit a PolCandidacy"
+            },
+            "created": "A new PolCandidacy is created with identifier {{ param }}",
+            "updated": "A PolCandidacy is updated with identifier {{ param }}",
+            "deleted": "A PolCandidacy is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete PolCandidacy {{ id }}?"
+            },
+            "detail": {
+                "title": "PolCandidacy"
+            },
+            "office": "Office",
+            "region": "Region",
+            "electionDay": "ElectionDay",
+            "candidate": "Candidate",
+            "party": "Party"
+        }
+    }
+}

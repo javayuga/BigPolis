@@ -1,41 +1,123 @@
 <div ng-cloak>
-    <div class="row">
-        <div class="col-md-4">
-            <span class="hipster img-responsive img-rounded"></span>
-        </div>
-        <div class="col-md-8">
-            <h1 translate="main.title">Welcome, Java Hipster!</h1>
-            <p class="lead" translate="main.subtitle">This is your homepage</p>
+	<div class="row">
+		<div class="col-md-12">
+				<div class="input-group" id="adv-search">
+					<input type="text" class="form-control"
+						placeholder="{{'global.messages.search' | translate}}"/>
+					<div class="input-group-btn">
+						<div class="btn-group" role="group">
+							<div class="dropdown dropdown-lg">
+								<button type="button" class="btn btn-default dropdown-toggle"
+									data-toggle="dropdown" aria-expanded="false">
+									<span class="caret"></span>
+								</button>
+								<div class="dropdown-menu dropdown-menu-right" role="menu">
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<label for="filter">Filter by</label> <select
+												class="form-control">
+												<option value="0" selected>All Snippets</option>
+												<option value="1">Featured</option>
+												<option value="2">Most popular</option>
+												<option value="3">Top rated</option>
+												<option value="4">Most commented</option>
+											</select>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label for="filter">maker</label> <select
+														class="form-control">
+														<option value="0" selected>All Snippets</option>
+														<option value="1">Featured</option>
+														<option value="2">Most popular</option>
+														<option value="3">Top rated</option>
+														<option value="4">Most commented</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label for="filter">year</label> <select
+														class="form-control">
+														<option value="0" selected>All Snippets</option>
+														<option value="1">Featured</option>
+														<option value="2">Most popular</option>
+														<option value="3">Top rated</option>
+														<option value="4">Most commented</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="contain">Contains the words</label> <input
+												class="form-control" type="text" />
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label for="filter">$min price$</label> <select
+														class="form-control">
+														<option value="0" selected>All Snippets</option>
+														<option value="1">Featured</option>
+														<option value="2">Most popular</option>
+														<option value="3">Top rated</option>
+														<option value="4">Most commented</option>
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label for="filter">$max price$</label> <select
+														class="form-control">
+														<option value="0" selected>All Snippets</option>
+														<option value="1">Featured</option>
+														<option value="2">Most popular</option>
+														<option value="3">Top rated</option>
+														<option value="4">Most commented</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="btn btn-primary">
+											<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+										</button>
+									</form>
+								</div>
+							</div>
+							<button type="button" class="btn btn-primary">
+								<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
 
-            <div ng-switch="isAuthenticated()">
-                <div class="alert alert-success" ng-switch-when="true" translate="main.logged.message" translate-values="{username: '{{account.login}}'}">
-                    You are logged in as user "{{account.login}}".
-                </div>
+			<div ng-switch="isAuthenticated()">
+				<div class="alert alert-success" ng-switch-when="true"
+					translate="main.logged.message"
+					translate-values="{username: '{{account.login}}'}">You are
+					logged in as user "{{account.login}}".</div>
 
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.authenticated">
-                    If you want to <a class="alert-link" href="#/login">sign in</a>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").
-                </div>
+				<div class="alert alert-warning" ng-switch-when="false"
+					translate="global.messages.info.authenticated">
+					If you want to <a class="alert-link" href="#/login">sign in</a>,
+					you can try the default accounts:<br />- Administrator
+					(login="admin" and password="admin") <br />- User (login="user"
+					and password="user").
+				</div>
 
-                <div class="alert alert-warning" ng-switch-when="false" translate="global.messages.info.register">
-                    You don't have an account yet? <a class="alert-link" href="#/register">Register a new account</a>
-                </div>
-            </div>
+				<div class="alert alert-warning" ng-switch-when="false"
+					translate="global.messages.info.register">
+					You don't have an account yet? <a class="alert-link"
+						href="#/register">Register a new account</a>
+				</div>
 
-            <p translate="main.question">
-                If you have any question on JHipster:
-            </p>
+			</div>
 
-            <ul>
-                <li><a href="http://jhipster.github.io/" target="_blank" translate="main.link.homepage">JHipster homepage</a></li>
-                <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" translate="main.link.stackoverflow">JHipster on Stack Overflow</a></li>
-                <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" translate="main.link.bugtracker">JHipster bug tracker</a></li>
-                <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" translate="main.link.chat">JHipster public chat room</a></li>
-                <li><a href="https://twitter.com/java_hipster" target="_blank"  translate="main.link.contact">contact @java_hipster on Twitter</a></li>
-            </ul>
-
-            <p>
-             <span translate="main.like">If you like JHipster, don't forget to give us a star on </span>&nbsp;<a href="https://github.com/jhipster/generator-jhipster" target="_blank" translate="main.github">Github</a>!
-            </p>
-        </div>
-    </div>
+		</div>
+	</div>
 </div>

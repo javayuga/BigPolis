@@ -1,0 +1,48 @@
+
+<div>
+    <h2><span translate="tserd14BrowserApp.polParty.detail.title">PolParty</span> {{polParty.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="tserd14BrowserApp.polParty.name">Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{polParty.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tserd14BrowserApp.polParty.acronym">Acronym</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{polParty.acronym}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="tserd14BrowserApp.polParty.candidacies">candidacies</span>
+                </td>
+                <td>
+                    <span ng-repeat="candidacies in polParty.candidaciess">
+                        <a class="form-control-static" ui-sref="polCandidacy.detail({id: {{candidacies.id}}})">{{candidacies.party}}</a>{{$last ? '' : ', '}}
+                    </span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

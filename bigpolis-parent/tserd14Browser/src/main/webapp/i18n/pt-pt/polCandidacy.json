@@ -1,0 +1,22 @@
+{
+    "tserd14BrowserApp": {
+        "polCandidacy" : {
+            "home": {
+                "title": "PolCandidacys",
+                "createLabel": "Criar um(a) novo(a) PolCandidacy",
+                "createOrEditLabel": "Criar ou editar um(a) PolCandidacy"
+            },
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) PolCandidacy {{ id }}?"
+            },
+            "detail": {
+                "title": "PolCandidacy"
+            },
+            "office": "Office",
+            "region": "Region",
+            "electionDay": "ElectionDay",
+            "candidate": "Candidate",
+            "party": "Party"
+        }
+    }
+}

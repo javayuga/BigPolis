@@ -1,0 +1,52 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "candidate",
+            "otherEntityName": "polCandidate",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "candidacies"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "party",
+            "otherEntityName": "polParty",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "candidacies"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "office",
+            "fieldType": "PolOffice",
+            "fieldValues": "PRESIDENTE,VICE_PRESIDENTE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "region",
+            "fieldType": "GeoAdminRegion",
+            "fieldValues": "RJ,SP",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "electionDay",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20160110162742",
+    "dto": "no",
+    "service": "serviceClass",
+    "pagination": "pagination"
+}

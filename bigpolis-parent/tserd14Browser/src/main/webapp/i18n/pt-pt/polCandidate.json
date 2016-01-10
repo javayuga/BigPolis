@@ -1,0 +1,20 @@
+{
+    "tserd14BrowserApp": {
+        "polCandidate" : {
+            "home": {
+                "title": "PolCandidates",
+                "createLabel": "Criar um(a) novo(a) PolCandidate",
+                "createOrEditLabel": "Criar ou editar um(a) PolCandidate"
+            },
+            "delete": {
+                "question": "Tem a certeza que pretende eliminar o(a) PolCandidate {{ id }}?"
+            },
+            "detail": {
+                "title": "PolCandidate"
+            },
+            "fullName": "FullName",
+            "alias": "Alias",
+            "candidacies": "Candidacies"
+        }
+    }
+}
